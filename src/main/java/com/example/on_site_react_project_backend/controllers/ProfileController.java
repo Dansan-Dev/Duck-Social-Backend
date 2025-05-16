@@ -1,6 +1,7 @@
 package com.example.on_site_react_project_backend.controllers;
 
 import com.example.on_site_react_project_backend.dtos.RequestProfileDto;
+import com.example.on_site_react_project_backend.dtos.ResponseListProfileDto;
 import com.example.on_site_react_project_backend.dtos.ResponseProfileDto;
 import com.example.on_site_react_project_backend.services.ProfileService;
 import jakarta.validation.Valid;
@@ -24,6 +25,11 @@ public class ProfileController {
             @PathVariable int id
             ) {
         return ResponseEntity.status(200).body(profileService.getProfile(id));
+    }
+
+    @GetMapping()
+    public ResponseEntity<ResponseListProfileDto> getAllProfiles() {
+        return ResponseEntity.status(200).body(profileService.getAllProfiles());
     }
 
     @PostMapping
