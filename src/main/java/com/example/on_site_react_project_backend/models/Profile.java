@@ -14,8 +14,9 @@ public class Profile {
 
     public Profile() {}
 
-    public void buildProfile(String name) {
+    public Profile buildProfile(String name) {
         setName(name);
+        return this;
     }
 
     public int getId() {

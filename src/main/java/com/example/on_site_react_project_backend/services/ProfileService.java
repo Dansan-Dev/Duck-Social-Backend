@@ -19,6 +19,12 @@ public class ProfileService {
 
     public ProfileService(ProfileRepository profileRepository) {
         this.repository = profileRepository;
+        this.repository.saveAll(List.of(
+                new Profile().buildProfile("Carl"),
+                new Profile().buildProfile("Max"),
+                new Profile().buildProfile("Peter"),
+                new Profile().buildProfile("Charles")
+        ));
     }
 
     public ResponseProfileDto getProfile(int id) {
