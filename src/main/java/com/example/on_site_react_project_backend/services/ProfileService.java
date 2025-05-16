@@ -23,9 +23,8 @@ public class ProfileService {
         return ResponseProfileDto.from(profile);
     }
 
-    public ResponseProfileDto createProfile(RequestProfileDto requestProfileDto) {
-        Profile profile = requestProfileDto.toProfile(repository.findTopByOrderByIdDesc());
-        Profile savedProfile = repository.save(profile);
+    public ResponseProfileDto createProfile(RequestProfileDto dto) {
+        Profile savedProfile = repository.save(dto.toProfile());
         return ResponseProfileDto.from(savedProfile);
     }
 
