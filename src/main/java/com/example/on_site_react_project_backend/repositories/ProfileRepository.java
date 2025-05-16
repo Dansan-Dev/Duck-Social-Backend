@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProfileRepository extends JpaRepository<Profile, Integer> {
     Profile findById(int id);
-    Integer deleteById(int id);
+    void deleteById(int id);
     Integer findTopByOrderByIdDesc();
 }
