@@ -1,6 +1,6 @@
 package com.example.on_site_react_project_backend.exception_related;
 
-import com.example.custom_server_spring_api.exceptions.UserNotFoundException;
+import com.example.on_site_react_project_backend.exceptions.UserNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
