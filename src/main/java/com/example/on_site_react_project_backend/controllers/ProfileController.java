@@ -27,7 +27,7 @@ public class ProfileController {
 
     @PostMapping
     public ResponseEntity<ResponseProfileDto> createProfile(
-            @Valid RequestProfileDto dto
+            @RequestBody @Valid RequestProfileDto dto
     ) {
         return ResponseEntity.status(201).body(profileService.createProfile(dto));
     }
