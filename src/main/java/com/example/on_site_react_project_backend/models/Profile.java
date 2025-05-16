@@ -1,12 +1,21 @@
 package com.example.on_site_react_project_backend.models;
 
-public class Profile {
-    private final int id;
-    private final String name;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-    public Profile(int id, String name) {
-        this.id = id;
-        this.name = name;
+@Entity
+public class Profile {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String name;
+
+    public Profile() {}
+
+    public void buildProfile(String name) {
+        setName(name);
     }
 
     public int getId() {
@@ -15,5 +24,9 @@ public class Profile {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
