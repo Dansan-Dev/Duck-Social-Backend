@@ -8,7 +8,9 @@ public record RequestProfileDto(
         @NotNull @NotEmpty
         String name
 ) {
-    public Profile toProfile(int id) {
-        return new Profile(id, name);
+    public Profile toProfile() {
+        Profile profile = new Profile();
+        profile.buildProfile(name);
+        return profile;
     }
 }
